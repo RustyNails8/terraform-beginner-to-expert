@@ -13,22 +13,22 @@ resource "aws_s3_bucket" "sumit_bucket_1" {
 # }
 
 resource "aws_s3_bucket" "sd_bucket_2" {
-    bucket = "sd_bucket_2"
-    acl = "private"
+  bucket = "sd_bucket_2"
+  acl    = "private"
 
-    versioning {
-        enabled = true
-        mfa_delete = false
-    }
+  versioning {
+    enabled    = true
+    mfa_delete = false
+  }
 }
 
 
 resource "aws_security_group" "sd_security_group" {
   name = "allow_tls"
   ingress {
-    protocol = "tcp"
-    from_port = 443
-    to_port = 443
+    protocol    = "tcp"
+    from_port   = 443
+    to_port     = 443
     cidr_blocks = ["10.0.0.0/16", "11.0.0.0/16"]
   }
 }
@@ -36,10 +36,10 @@ resource "aws_security_group" "sd_security_group" {
 
 
 resource "aws_security_group_rule" "http_in" {
-    protocol = "tcp"
-    security_group_id = aws_security_group.my_security_group.id
-    from_port = 80
-    to_port = 80
-    type = "ingress"
-    cidr_blocks = ["0.0.0.0/0"]
+  protocol          = "tcp"
+  security_group_id = aws_security_group.my_security_group.id
+  from_port         = 80
+  to_port           = 80
+  type              = "ingress"
+  cidr_blocks       = ["0.0.0.0/0"]
 }

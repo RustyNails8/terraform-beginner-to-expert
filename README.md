@@ -10,9 +10,7 @@ Terraform is a tool for **building**, **changing**, and **versioning** **infrast
 > In a Terraform project, you have defined that you **want four AWS EC2 instances.**
 
 > If you currently have no EC2 instances, then when you run Terraform it will create four AWS EC2 instances.
-
 > If you have three EC2 instances when you run Terraform, then Terraform will only create one additionalinstance and leave the three you already had.
-
 > **If you have five AWS EC2 Instances, Terraform will delete one.**
 
 > At no point does Terraform ask you how many instances you currently have, Terraform figures it out and then creates a plan for how to get from what you have to what you want and makes it happen.
